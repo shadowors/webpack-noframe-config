@@ -31,7 +31,11 @@ module.exports = {
                 exclude:'/node_modules/'
             },
             {test: /\.png|\.jpg$/, loader: "file-loader?name="+'images/[name].[ext]'},//
-            {test: /\.pug$/, use: ['html-loader', 'pug-html-loader']}//pug模板引擎解析
+            {test: /\.pug$/, use: ['html-loader', {
+                    loader:'pug-html-loader', options: {
+                        pretty:true
+                    }
+                }]}
         ],
     },
 
